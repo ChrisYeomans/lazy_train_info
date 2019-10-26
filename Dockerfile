@@ -6,7 +6,7 @@ RUN apt update -y \
     && apt upgrade -y \
     && apt-get install -y python-pip python-dev
 
-# For Caching
+# For Caching 
 COPY ./requirements.txt /app/requirements.txt
 
 WORKDIR /app
