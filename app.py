@@ -20,7 +20,7 @@ def index():
 @app.route('/info/<st_name>')
 def info(st_name):
 	info = st.get_info_lst(st_name)
-	return render_template('info.html', info=info, cols=info_cols)
+	return render_template('info.html', info=info, cols=info_cols, st_name=st_name)
 
 if __name__ == "__main__":
 	main()

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="table-responsive-md">
+    <div class="table-responsive-lg">
         <table class="table table-striped table-hover">
             <thead>
                 <tr class="text-center">
@@ -21,13 +21,15 @@
 
             <tbody>
                 {% for i in info %}
-                    <tr class="text-center"></tr>
-                        {% for j in i %}
-                            {% if j in cols %}
-                            <td scope="row" >{{ i[j] }}</p>
-                            {% endif %}
-                        {% endfor %}
-                    </tr>
+                    {% if i['Destination'] != st_name %}
+                        <tr class="text-center"></tr>
+                            {% for j in i %}
+                                {% if j in cols %}
+                                <td scope="row" >{{ i[j] }}</p>
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                    {% endif %}
                 {% endfor %}
             </tbody>
         </table>
