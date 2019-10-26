@@ -4,12 +4,6 @@
         <table class="table table-striped table-hover">
             <thead>
                 <tr class="text-center">
-                    <th scope="col">Server Time</th>
-                    <th scope="col">Train Code</th>
-                    <th scope="col">Station Name</th>
-                    <th scope="col">Station Code</th>
-                    <th scope="col">Query Time</th>
-                    <th scope="col">Train Date</th>
                     <th scope="col">Origin</th>
                     <th scope="col">Destination</th>
                     <th scope="col">Origin Time</th>
@@ -22,9 +16,6 @@
                     <th scope="col">Expected Departure</th>
                     <th scope="col">Scheduled Arrival</th>
                     <th scope="col">Scheduled Departure</th>
-                    <th scope="col">Direction</th>
-                    <th scope="col">Train Type</th>
-                    <th scope="col">Location Type</th>
                 </tr>
             </thead>
 
@@ -32,7 +23,9 @@
                 {% for i in info %}
                     <tr class="text-center"></tr>
                         {% for j in i %}
+                            {% if j in cols %}
                             <td scope="row" >{{ i[j] }}</p>
+                            {% endif %}
                         {% endfor %}
                     </tr>
                 {% endfor %}
