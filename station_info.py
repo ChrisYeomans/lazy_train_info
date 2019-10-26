@@ -18,11 +18,6 @@ class StationInfo:
             if tmp_dict['Destination'] != self.station_name:
                 self.info_lst.append(tmp_dict)
     
-        for p in self.info_lst:
-            print(p['Traincode'])
-
-        
-    
     def station_name_to_code(self, station_name: str):
         #TODO: Make this cached
         out_dict = {}
