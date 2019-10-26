@@ -14,8 +14,8 @@ def main():
 
 @app.route('/')
 def index():
-	info = st.get_info_lst("Dublin Connolly")
-	return render_template('index.html', info=info)
+	st_lst = st.get_station_lst()
+	return render_template('index.html', st_lst=st_lst)
 
 @app.route('/info/<st_name>')
 def info(st_name):

@@ -27,8 +27,16 @@ class StationInfo:
         for station in stations:
             out_dict[station[0].text.upper()] = station[4].text
         return out_dict[station_name.upper()]
+    
+    def get_station_lst(self):
+        out_lst = []
+        stations_xml = requests.get("http://api.irishrail.ie/realtime/realtime.asmx/getAllStationsXML").text
+        stations = ET.fromstring(stations_xml)
+        for station in stations:
+            out_lst.append(station[0].text)
+        return out_lst
 
 if __name__ == "__main__":
-    st = StationInfo("Cork")
-    print(st.station_code)
+    st = StationInfo()
+    print(st.get_station_lst())
 
