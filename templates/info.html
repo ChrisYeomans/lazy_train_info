@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="table-responsive-md">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr class="text-center">
+                    <th scope="col">Server Time</th>
+                    <th scope="col">Train Code</th>
+                    <th scope="col">Station Name</th>
+                    <th scope="col">Station Code</th>
+                    <th scope="col">Query Time</th>
+                    <th scope="col">Train Date</th>
+                    <th scope="col">Origin</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Origin Time</th>
+                    <th scope="col">Destination Time</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Last Location</th>
+                    <th scope="col">Due In</th>
+                    <th scope="col">Late</th>
+                    <th scope="col">Expected Arrival</th>
+                    <th scope="col">Expected Departure</th>
+                    <th scope="col">Scheduled Arrival</th>
+                    <th scope="col">Scheduled Departure</th>
+                    <th scope="col">Direction</th>
+                    <th scope="col">Train Type</th>
+                    <th scope="col">Location Type</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for i in info %}
+                    <tr class="text-center"></tr>
+                        {% for j in i %}
+                            <td scope="row" >{{ i[j] }}</p>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
