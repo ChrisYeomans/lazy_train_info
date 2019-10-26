@@ -38,5 +38,5 @@ class StationInfo:
 
 if __name__ == "__main__":
     st = StationInfo()
-    print(st.get_station_lst())
+    print(st.get_info_lst("Maynooth"))
 
